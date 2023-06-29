@@ -1,8 +1,17 @@
+Array.prototype.at = function (index) {
+    if (index < 0) {
+        const length = this.length
+        return this[length + index];        
+    }
+    return this[index];
+    
+}
+
 Array.prototype.map = function (f) {
     const res: any[] = []
-    const length = this.length
+    const length = this.length;
     for (let i = 0; i < length; ++i) {
-        res.push(f(this[i], i, this))
+        res.push(f(this[i], i, this));
     }
     return res
 }
